@@ -321,13 +321,32 @@ function Settings({ navigation }) {
           navigation.navigate('Notification');
         }}
       />
-      <ButtonTouchable
+      {/* <ButtonTouchable
         title="Bons de réduction"
         icon="wallet"
         onPress={() => {
           navigation.navigate('PromoCodesPage');
         }}
       />
+      <ButtonTouchable
+        title="Liste de contacts"
+        icon="users"
+        onPress={() => {
+          navigation.navigate('Contacts');
+        }}
+      />
+      <ButtonTouchable
+        title="Historique de paiement"
+        icon="credit-card"
+        onPress={() => {
+          navigation.navigate('PaymentHistory');
+        }}
+      />
+
+      <TextTitle
+        title="Personnalisation"
+        style={{ fontSize: AppStyles.fontSize.content, marginTop: 30 }}
+      /> */}
       <ButtonTouchable
         title="Liste de contacts"
         icon="users"
@@ -367,7 +386,7 @@ function Settings({ navigation }) {
         style={{ marginLeft: 20, marginTop: 30, marginBottom: 10 }}
       />
       <ButtonTouchable title="Centre d'aide" subtext="Bientôt disponible" icon="help-with-circle" />
-      <ButtonTouchable title="Fonctionnement de Pulsive" subtext="Bientôt disponible" icon="leaf" />
+      <ButtonTouchable title="Fonctionnement de Pulsive" subtext="Bientôt disponible" icon="leaf" onPress={() => {navigation.navigate('Fonctionnement');}} />
       <ButtonTouchable
         title="Envoyez vos remarques"
         subtext="Bientôt disponible"

@@ -57,7 +57,7 @@ function Chat({ chat }) {
             <Text style={styles.profileName}>{name}</Text>
             <Text style={styles.message}>
               {isMe ? 'You:  ' : ''}
-              {lastMessage}
+              ...{lastMessage}
             </Text>
           </View>
           <View style={{ width: '5%' }}>{renderCharReadStatus()}</View>
@@ -68,49 +68,66 @@ function Chat({ chat }) {
 }
 
 const styles = StyleSheet.create({
+  separator: {
+    height: 1, // Reduced height for a thinner separator
+    backgroundColor: '#ccc', // Color for the separator
+    marginVertical: 10, // Adjusted vertical margin
+  },
+  image: {
+    width: 50,
+    height: 50,
+    borderRadius: 30,
+  },
   container: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 5
+    padding: 15, // Reduced padding for a more compact look
+    backgroundColor: 'white',
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 3,
+    marginBottom: 15, // Slightly reduced margin
+    height: 90, // Reduced height for a more compact design
   },
   imageContainer: {
-    width: '15%',
+    width: 50, // Slightly reduced size for the profile picture
+    height: 50,
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 10
+    marginRight: 10, // Reduced spacing between profile picture and text
+    borderRadius: 25,
+    backgroundColor: '#f0f0f0',
   },
   chatContainer: {
-    width: '75%'
+    width: '70%', // Slightly reduced width for the message container
   },
   profileName: {
-    fontSize: 18,
-    color: AppStyles.color.pulsive
+    fontSize: 16, // Slightly reduced font size for the name
+    fontWeight: 'bold',
+    color: 'black',
   },
   message: {
-    fontSize: 16,
-    color: AppStyles.color.text,
-    paddingRight: 10
+    fontSize: 14, // Slightly reduced font size for the message
+    color: '#555',
+    marginTop: 5,
   },
   messageReadImage: {
-    width: 25,
-    height: 25,
-    borderRadius: 12.5
+    width: 16, // Slightly reduced icon size
+    height: 16,
+    marginRight: 5,
   },
   chatBubble: {
-    width: 25,
-    height: 25,
-    borderRadius: 12.5,
-    backgroundColor: 'gray',
+    width: 16,
+    height: 16,
+    borderRadius: 8,
+    backgroundColor: 'lightblue',
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 10
+    marginRight: 8,
   },
-  separator: {
-    width: Dimensions.get('window').width * 0.8,
-    height: 1,
-    marginVertical: 3,
-    backgroundColor: '#000',
-    marginLeft: Dimensions.get('window').width * 0.15
-  }
 });
 export default Chat;
